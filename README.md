@@ -31,6 +31,39 @@ mysql://root:OaLTJmrPxXgjyJufzHKuLBQrcnkPIDBp@mysql-9ah0.railway.internal:3306/r
 - `classes/distributionHistory.php` - Distribution history functionality
 - Added new file: `classes/db_config.php` - Centralized database configuration helper
 
-## Deployment
+## Docker Setup
 
-When deploying to Railway, the `DATABASE_URL` environment variable will be automatically set by the platform. For local development, you can set this environment variable manually or rely on the default connection string provided in the code.
+This project now includes Docker configuration for easy development and deployment.
+
+### Docker Files
+
+- `Dockerfile` - Configures the PHP environment with all required extensions including PDO MySQL
+- `.dockerignore` - Excludes unnecessary files from the Docker build
+- `docker-compose.yml` - Sets up both the application and a MySQL database for local development
+
+### Local Development with Docker
+
+1. Install Docker and Docker Compose on your machine
+2. Navigate to the project directory
+3. Run the following command to start the application:
+
+```
+docker-compose up -d
+```
+
+4. Access the application at http://localhost:8080
+
+### Deployment to Railway
+
+1. Push your code to a Git repository
+2. Connect your repository to Railway
+3. Railway will automatically detect the Dockerfile and build your application
+4. Set up the MySQL database service in Railway
+5. Railway will automatically set the `DATABASE_URL` environment variable
+
+## Troubleshooting
+
+If you encounter the "could not find driver" error:
+
+1. The Dockerfile ensures that the PDO MySQL driver is installed
+2. For local development without Docker, ensure that the PHP PDO MySQL extension is enabled in your php.ini file
