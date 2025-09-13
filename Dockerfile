@@ -1,39 +1,13 @@
-FROM php:8.1-apache
+FROM php:8.1-cli
 
-# Install system dependencies
-RUN apt-get update && apt-get install -y \
-    git \
-    curl \
-    libpng-dev \
-    libonig-dev \
-    libxml2-dev \
-    zip \
-    unzip
-
-# Clear cache
-RUN apt-get clean && rm -rf /var/lib/apt/lists/*
-
-# Install PHP extensions
-RUN docker-php-ext-install pdo_mysql mbstring exif pcntl bcmath gd
-
-# Enable Apache modules
-RUN a2enmod rewrite headers
+# Install PDO MySQL
+RUN docker-php-ext-install pdo pdo_mysql
 
 # Set working directory
-WORKDIR /var/www/html
+WORKDIR /app
 
-# Copy application files
-COPY . /var/www/html/
+# Copy project files
+COPY . .
 
-# Set permissions
-RUN chown -R www-data:www-data /var/www/html
-
-# Configure Apache
-RUN echo 'DirectoryIndex index.php' > /etc/apache2/conf-available/docker-php.conf
-RUN a2enconf docker-php
-
-# Expose port 80
-EXPOSE 80
-
-# Start Apache
-CMD ["apache2-foreground"]
+# Start PHP built-in server
+CMD ["php", "-S", "0.0.0.0:8080", "-t", "."]

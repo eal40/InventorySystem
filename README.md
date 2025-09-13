@@ -33,25 +33,11 @@ mysql://root:OaLTJmrPxXgjyJufzHKuLBQrcnkPIDBp@mysql-9ah0.railway.internal:3306/r
 
 ## Docker Setup
 
-This project now includes Docker configuration for easy development and deployment.
+This project includes a simple Dockerfile for deployment on Railway.
 
-### Docker Files
+### Docker File
 
-- `Dockerfile` - Configures the PHP environment with all required extensions including PDO MySQL
-- `.dockerignore` - Excludes unnecessary files from the Docker build
-- `docker-compose.yml` - Sets up both the application and a MySQL database for local development
-
-### Local Development with Docker
-
-1. Install Docker and Docker Compose on your machine
-2. Navigate to the project directory
-3. Run the following command to start the application:
-
-```
-docker-compose up -d
-```
-
-4. Access the application at http://localhost:8080
+- `Dockerfile` - Configures a PHP CLI environment with PDO MySQL extension installed
 
 ### Deployment to Railway
 
