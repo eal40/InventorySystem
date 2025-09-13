@@ -1,13 +1,10 @@
 <?php
-// Database connection
-$host = 'localhost';
-$dbname = '3motorinv';
-$username = 'root';
-$password = '';
+// Include database configuration helper
+require_once __DIR__ . '/db_config.php';
 
+// Database connection
 try {
-    $pdo = new PDO("mysql:host=$host;dbname=$dbname;charset=utf8", $username, $password);
-    $pdo->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+    $pdo = create_db_connection();
 } catch (PDOException $e) {
     echo json_encode(['success' => false, 'message' => 'Database connection failed.']);
     exit;

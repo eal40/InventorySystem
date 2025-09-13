@@ -20,6 +20,8 @@ SET time_zone = "+00:00";
 --
 -- Database: `3motorinv`
 --
+CREATE DATABASE IF NOT EXISTS `railway`;
+USE `railway`;
 
 -- --------------------------------------------------------
 

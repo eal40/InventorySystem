@@ -1,14 +1,13 @@
 <?php
+// Include database configuration helper
+require_once __DIR__ . '/db_config.php';
 
 // Database connection function
 function dbconnection(){
     date_default_timezone_set('Asia/Manila');
     
     try {
-        $dbconnection = new PDO('mysql:dbname=3motorinv; host=localhost; charset=utf8mb4', 'root', '');
-        $dbconnection->setAttribute(PDO::ATTR_EMULATE_PREPARES, false);
-        $dbconnection->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-        return $dbconnection;
+        return create_db_connection();
     } catch (PDOException $e) {
         die("Connection failed: " . $e->getMessage());
     }
