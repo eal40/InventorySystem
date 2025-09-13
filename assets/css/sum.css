@@ -1,0 +1,18 @@
+
+/* Custom styles for buttons and highlights */
+.btn-custom {
+  background-color: #bf1c2c;
+  border-color: #bf1c2c;
+}
+.btn-custom:hover {
+  background-color: #9e1623;
+  border-color: #9e1623;
+}
+
+.archive-date {
+  color: #bf1c2c;
+}
+.archive-date:hover {
+  color: #9e1623;
+  text-decoration: underline;
+}

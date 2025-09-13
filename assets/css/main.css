@@ -1,0 +1,220 @@
+/* Body Background */
+body {
+    background-color: rgb(238, 239, 244);
+}
+
+/* Sidebar Styles */
+.sidebar {
+    width: 4.5rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    z-index: 1000;
+    transition: width 0.3s ease;
+    overflow-x: hidden;
+    overflow-y: auto;
+    box-shadow: 2px 0 8px rgba(0,0,0,0.1);
+    display: flex;
+    flex-direction: column;
+}
+
+.sidebar:hover {
+    width: 16rem;
+}
+
+.menu-text {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    margin-left: 1rem;
+    white-space: nowrap;
+}
+
+.sidebar:hover .menu-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-link {
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    color: rgba(255, 255, 255, 0.8);
+    transition: color 0.3s ease;
+    margin: 0.2rem 0;
+    border-radius: 0.375rem;
+}
+
+.nav-link:hover {
+    color: #fff;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.nav-link i {
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+.nav-link.active i {
+    background-color: #495057; 
+    padding: 12px; 
+    border-radius: 6px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); 
+    width: 40px; 
+    height: 40px; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+}
+
+.nav-link.active {
+    color: #fff !important; 
+}
+
+.main-content {
+    margin-left: 4.5rem;
+    padding: 1rem;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow-y: hidden;
+}
+
+.sidebar-header {
+    padding: 1rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    margin-bottom: 1rem;
+}
+
+.sidebar-header i {
+    min-width: 2.5rem;
+    text-align: center;
+}
+
+/* User Profile Section */
+.user-profile {
+    margin-top: auto;
+    padding: 0.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.profile-container {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-container i {
+    min-width: 2.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.profile-container .name {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 500;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    white-space: nowrap;
+}
+
+.logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.logout-btn i {
+    min-width: 2.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.logout-btn:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.sidebar:hover .profile-container .name,
+.sidebar:hover .logout-btn .menu-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.analytic-card {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    text-align: center;
+    padding: 20px;
+    background-color: white;
+}
+.analytic-card h5 {
+    font-size: 1.25rem;
+    font-weight: bold;
+}
+.analytic-card p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+.custom-logout-btn {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    color: rgba(255, 255, 255, 0.8);
+    background: transparent;
+    border: none;
+    border-radius: 0.375rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin: 0.2rem 0;
+}
+
+.custom-logout-btn i {
+    min-width: 2.5rem;
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+.custom-logout-btn:hover {
+    color: white;
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+.custom-logout-btn .menu-text {
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.2s ease;
+    margin-left: 1rem;
+    white-space: nowrap;
+}
+
+.sidebar:hover .custom-logout-btn .menu-text {
+    opacity: 1;
+    visibility: visible;
+}
+
+.nav-tabs .nav-link {
+    color: #495057;
+    background-color: #f8f9fa;
+    border: 1px solid #dee2e6;
+}
+.nav-tabs .nav-link.active {
+    color: #fff;
+    background-color: #007bff;
+    border-color: #007bff;
+}
