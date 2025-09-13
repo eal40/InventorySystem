@@ -59,12 +59,14 @@ function login($username, $password) {
         
         // Check if user exists and password is correct
         if ($user && password_verify($password, $user['Password'])) {
-            // Return user data (User_ID, FName, Role, Branch) for session storage
+            // Return user data (User_ID, FName, LName, Role, Branch, Email) for session storage
             return [
                 'User_ID' => $user['User_ID'], 
                 'FName' => $user['FName'], 
+                'LName' => $user['LName'], 
                 'Role' => $user['Role'], 
-                'Branch' => $user['Branch']
+                'Branch' => $user['Branch'],
+                'Email' => $user['Email']
             ];
         } else {
             // Return false if login fails

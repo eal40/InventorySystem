@@ -1,4 +1,7 @@
 <?php
+// Turn off notices and warnings that might cause headers already sent errors
+error_reporting(E_ALL & ~E_NOTICE & ~E_WARNING);
+
 include __DIR__ . '/function.php';
 session_start();  // Start the session at the very beginning
 
